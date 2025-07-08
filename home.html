@@ -1,130 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nutriex – Holistic Health AI</title>
   <link rel="stylesheet" href="fp.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
-    <style>/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: #f5f9ff;
-  color: #222;
-}
+    html body {
+      height: 100%;
+      width: 100%;
+      background: #08100C
+    }
 
-/* Hero Section */
-.hero {
-  background: linear-gradient(135deg, #63eb3e, #53daba);
-  color: white;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  animation: fadeIn 2s ease-in-out;
-}
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: whitesmoke;
+    }
 
-.hero-content h1 {
-  font-size: 4.5rem;
-  font-weight: 900;
-  animation: slideUp 1s ease-out;
-}
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+    }
 
-.hero-content p {
-  font-size: 1.4rem;
-  margin: 20px 0;
-  animation: slideUp 1.4s ease-out;
-}
 
-.hero-content p span {
-  color: #dfdf3b;
-  font-weight: bold;
-}
+    .hero-content h1 {
+      background-color: #27AE60;
+      overflow-y: hidden;
+      border-radius: 80px;
+      padding: 0px 40px;
+      font-size: 25vh;
+      /* margin-bottom: 20px; */
+    }
 
-.hero-content button {
-  background: #e9c654;
-  color: #2d3436;
-  padding: 14px 30px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: transform 0.3s ease, background 0.3s;
-  animation: fadeIn 2s ease;
-}
+    h1 span {
+      display: inline-block;
+    }
 
-.hero-content button:hover {
-  transform: scale(1.1);
-  background: #e4aa3f;
-}
+    .hero-content p {
+      font-size: 4vh;
+      margin: 20px;
+    }
 
-/* Features Section */
-.features {
-  padding: 60px 30px;
-  background: #ffffff;
-  text-align: center;
-}
+    .hero-content button {
+      background: #27AE60;
+      color: #e0f7fa;
+      margin: 20px;
+      font-size: 5vh;
+      padding: 14px;
+      border-radius: 30px;
+    }
 
-.features h2 {
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-  color: #0984e3;
-  font-weight: 800;
-}
+    .arrow {
+      font-size: 30px;
+      font-weight: 800;
+      background: transparent;
+      color: red;
+      mix-blend-mode: difference;
+      position: absolute;
+      transform: translate(-100%, -100%);
+      transition: all ease-IN 600;
+    }
 
-.feature-boxes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
 
-.feature {
-  background: #e0f7fa;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s;
-}
+    /* Features Section */
+    .features {
+      padding: 60px 30px;
+      background: #ffffff;
+      text-align: center;
+    }
 
-.feature:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-}
+    .features h2 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: #0984e3;
+      font-weight: 800;
+    }
 
-.feature h3 {
-  color: #00cec9;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
+    .feature-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
 
-.feature p {
-  font-size: 1rem;
-  color: #333;
-}
+    .feature {
+      background: #e0f7fa;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s;
+    }
 
-/* Footer */
-footer {
-  background: #dfe6e9;
-  padding: 20px;
-  font-size: 0.95rem;
-  color: #2d3436;
-  text-align: center;
-}
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
 
-/* Animations */
+    .feature h3 {
+      color: #00cec9;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
 
-</style>
+    .feature p {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    /* Footer */
+    #move {
+      background-color: #ffffff;
+      /* use color-zilla extension to get the color of any website */
+      display: flex;
+      gap: 40px;
+      overflow-x: hidden;
+      color: black;
+
+    }
+
+    .marque {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      transform: translateX(-100%);
+    }
+
+    .marque h1 {
+      font-size: 40px;
+      font-weight: 300;
+    }
+  </style>
 
   <!-- Hero Section -->
   <header class="hero">
@@ -132,6 +156,9 @@ footer {
       <h1> Nutriex</h1>
       <p>Your AI-powered gateway to <span>personalized</span> and <span>holistic</span> healthcare!</p>
       <button onclick="goToLogin()"> Get Started</button>
+    </div>
+    <div class="arrow">
+      <i class="ri-add-line"></i>
     </div>
   </header>
 
@@ -160,14 +187,45 @@ footer {
 
   <!-- Footer -->
   <footer>
-    <p> Team AART-ist | HackOrbit 2025 | Nutriex ©</p>
+
+    <div id="page2">
+      <div id="move">
+
+        <div class="marque">
+          <h1>Team AART-ist | HackOrbit 2025 | Nutriex ©</h1>
+          <img src="" alt="">
+        </div>
+        <div class="marque">
+          <h1>Team AART-ist | HackOrbit 2025 | Nutriex ©</h1>
+          <img src="" alt="">
+        </div>
+        <div class="marque">
+          <h1>Team AART-ist | HackOrbit 2025 | Nutriex ©</h1>
+          <img src="" alt="">
+        </div>
+        <div class="marque">
+          <h1>Team AART-ist | HackOrbit 2025 | Nutriex ©</h1>
+          <img src="" alt="">
+        </div>
+        <div class="marque">
+          <h1>Team AART-ist | HackOrbit 2025 | Nutriex ©</h1>
+          <img src="" alt="">
+        </div>
+
+
+      </div>
+    </div>
   </footer>
 
   <script>
-  function goToLogin() {
-  window.location.href = "login.html";
-}
-</script>
+    function goToLogin() {
+      window.location.href = "login.html";
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
