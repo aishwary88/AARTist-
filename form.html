@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Report Input Form</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+      background-image: url("v870-mynt-20[1]\(1\).jpg");
+      background-size:auto;
+      
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .section-title {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #333;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1> Blood Report Parameter Input</h1>
+  <form id="bloodForm">
+    <div class="form-group">
+      <label>Age</label>
+      <input type="number" name="age" required />
+    </div>
+    <div class="form-group">
+      <label>Gender</label>
+      <input type="text" name="gender" placeholder="Male/Female" required />
+    </div>
+
+    <div class="section-title">1. Complete Blood Count (CBC)</div>
+    <div class="form-group"><label>Hemoglobin (Hb)</label><input type="number" name="hb" step="any" /></div>
+    <div class="form-group"><label>Hematocrit (HCT)</label><input type="number" name="hct" step="any" /></div>
+    <div class="form-group"><label>RBC</label><input type="number" name="rbc" step="any" /></div>
+    <div class="form-group"><label>MCV</label><input type="number" name="mcv" step="any" /></div>
+    <div class="form-group"><label>MCH</label><input type="number" name="mch" step="any" /></div>
+    <div class="form-group"><label>MCHC</label><input type="number" name="mchc" step="any" /></div>
+    <div class="form-group"><label>WBC</label><input type="number" name="wbc" step="any" /></div>
+    <div class="form-group"><label>Neutrophils</label><input type="number" name="neutrophils" step="any" /></div>
+    <div class="form-group"><label>Lymphocytes</label><input type="number" name="lymphocytes" step="any" /></div>
+    <div class="form-group"><label>Monocytes</label><input type="number" name="monocytes" step="any" /></div>
+    <div class="form-group"><label>Eosinophils</label><input type="number" name="eosinophils" step="any" /></div>
+    <div class="form-group"><label>Basophils</label><input type="number" name="basophils" step="any" /></div>
+    <div class="form-group"><label>Platelet Count</label><input type="number" name="platelets" step="any" /></div>
+
+    <div class="section-title">2. Liver Function Test (LFT)</div>
+    <div class="form-group"><label>SGOT (AST)</label><input type="number" name="ast" step="any" /></div>
+    <div class="form-group"><label>SGPT (ALT)</label><input type="number" name="alt" step="any" /></div>
+    <div class="form-group"><label>ALP</label><input type="number" name="alp" step="any" /></div>
+    <div class="form-group"><label>GGT</label><input type="number" name="ggt" step="any" /></div>
+    <div class="form-group"><label>Total Bilirubin</label><input type="number" name="total_bilirubin" step="any" /></div>
+    <div class="form-group"><label>Direct Bilirubin</label><input type="number" name="direct_bilirubin" step="any" /></div>
+    <div class="form-group"><label>Indirect Bilirubin</label><input type="number" name="indirect_bilirubin" step="any" /></div>
+    <div class="form-group"><label>Albumin</label><input type="number" name="albumin" step="any" /></div>
+    <div class="form-group"><label>Total Protein</label><input type="number" name="total_protein" step="any" /></div>
+
+    <div class="section-title">3. Kidney Function Test (KFT)</div>
+    <div class="form-group"><label>Serum Creatinine</label><input type="number" name="creatinine" step="any" /></div>
+    <div class="form-group"><label>BUN</label><input type="number" name="bun" step="any" /></div>
+    <div class="form-group"><label>Uric Acid</label><input type="number" name="uric_acid" step="any" /></div>
+    <div class="form-group"><label>eGFR</label><input type="number" name="egfr" step="any" /></div>
+    <div class="form-group"><label>Sodium</label><input type="number" name="sodium" step="any" /></div>
+    <div class="form-group"><label>Potassium</label><input type="number" name="potassium" step="any" /></div>
+    <div class="form-group"><label>Chloride</label><input type="number" name="chloride" step="any" /></div>
+
+    <div class="section-title">4. Lipid Profile</div>
+    <div class="form-group"><label>Total Cholesterol</label><input type="number" name="total_cholesterol" step="any" /></div>
+    <div class="form-group"><label>LDL</label><input type="number" name="ldl" step="any" /></div>
+    <div class="form-group"><label>HDL</label><input type="number" name="hdl" step="any" /></div>
+    <div class="form-group"><label>Triglycerides</label><input type="number" name="triglycerides" step="any" /></div>
+    <div class="form-group"><label>VLDL</label><input type="number" name="vldl" step="any" /></div>
+
+    <div class="section-title">5. Diabetes Markers</div>
+    <div class="form-group"><label>FBS</label><input type="number" name="fbs" step="any" /></div>
+    <div class="form-group"><label>PPBS</label><input type="number" name="ppbs" step="any" /></div>
+    <div class="form-group"><label>HbA1c</label><input type="number" name="hba1c" step="any" /></div>
+    <div class="form-group"><label>Insulin</label><input type="number" name="insulin" step="any" /></div>
+
+    <div class="section-title">6. Thyroid Function Test</div>
+    <div class="form-group"><label>TSH</label><input type="number" name="tsh" step="any" /></div>
+    <div class="form-group"><label>T3</label><input type="number" name="t3" step="any" /></div>
+    <div class="form-group"><label>T4</label><input type="number" name="t4" step="any" /></div>
+
+    <div class="section-title">7. Vitamins & Minerals</div>
+    <div class="form-group"><label>Vitamin B12</label><input type="number" name="vitamin_b12" step="any" /></div>
+    <div class="form-group"><label>Vitamin D3</label><input type="number" name="vitamin_d3" step="any" /></div>
+    <div class="form-group"><label>Calcium</label><input type="number" name="calcium" step="any" /></div>
+    <div class="form-group"><label>Ferritin</label><input type="number" name="ferritin" step="any" /></div>
+    <div class="form-group"><label>Iron</label><input type="number" name="iron" step="any" /></div>
+    <div class="form-group"><label>Folate</label><input type="number" name="folate" step="any" /></div>
+
+    <div class="section-title">8. Inflammatory Markers</div>
+    <div class="form-group"><label>CRP</label><input type="number" name="crp" step="any" /></div>
+    <div class="form-group"><label>ESR</label><input type="number" name="esr" step="any" /></div>
+
+    <div class="section-title">9. Tumor Markers (Optional)</div>
+    <div class="form-group"><label>PSA</label><input type="number" name="psa" step="any" /></div>
+    <div class="form-group"><label>CA-125</label><input type="number" name="ca125" step="any" /></div>
+    <div class="form-group"><label>AFP</label><input type="number" name="afp" step="any" /></div>
+    <div class="form-group"><label>CEA</label><input type="number" name="cea" step="any" /></div>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

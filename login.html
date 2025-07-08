@@ -157,7 +157,9 @@ document.getElementById("auth-form").addEventListener("submit", function (e) {
     alert(` Welcome back, ${username}!`);
   } else {
     const name = document.getElementById("name").value;
+    window.location.href = "form.html";
     alert(` Account created for ${name}!`);
+    // Redirect to form.html after account creation
   }
   // Add redirect or database logic here
 });
