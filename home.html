@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nutriex – Holistic Health AI</title>
+  <link rel="stylesheet" href="fp.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f5f9ff;
+  color: #222;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #63eb3e, #53daba);
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  font-weight: 900;
+  animation: slideUp 1s ease-out;
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin: 20px 0;
+  animation: slideUp 1.4s ease-out;
+}
+
+.hero-content p span {
+  color: #dfdf3b;
+  font-weight: bold;
+}
+
+.hero-content button {
+  background: #e9c654;
+  color: #2d3436;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.3s ease, background 0.3s;
+  animation: fadeIn 2s ease;
+}
+
+.hero-content button:hover {
+  transform: scale(1.1);
+  background: #e4aa3f;
+}
+
+/* Features Section */
+.features {
+  padding: 60px 30px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #0984e3;
+  font-weight: 800;
+}
+
+.feature-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.feature {
+  background: #e0f7fa;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature h3 {
+  color: #00cec9;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background: #dfe6e9;
+  padding: 20px;
+  font-size: 0.95rem;
+  color: #2d3436;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+</style>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>⚕️ Nutriex</h1>
+      <p>Your AI-powered gateway to <span>personalized</span> and <span>holistic</span> healthcare!</p>
+      <button onclick="goToLogin()">🚀 Get Started</button>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <h2>✨ Why Nutriex?</h2>
+    <div class="feature-boxes">
+      <div class="feature">
+        <h3>🧬 AI Health Analyzer</h3>
+        <p>Smart AI scans your symptoms, labs, and habits to guide you early.</p>
+      </div>
+      <div class="feature">
+        <h3>⚠️ Early Detection</h3>
+        <p>Be alerted to potential diseases before they become threats.</p>
+      </div>
+      <div class="feature">
+        <h3>🌿 Ayurveda Fusion</h3>
+        <p>Home remedies + science = a balanced approach to healing.</p>
+      </div>
+      <div class="feature">
+        <h3>🥗 Custom Diet Plans</h3>
+        <p>Your body type, your food. We personalize your plate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>🚀 Team AART-ist | HackOrbit 2025 | Nutriex ©</p>
+  </footer>
+
+  <script>
+  function goToLogin() {
+  window.location.href = "login.html";
+}
+</script>
+  <script src="script.js"></script>
+</body>
+</html>
