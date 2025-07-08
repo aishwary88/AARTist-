@@ -10,8 +10,8 @@
     <style>
         body{
             background-image: url("v870-mynt-20[1](1).jpg");
-            height: auto;
-            width: auto;
+            background-size: cover; 
+            background-repeat: no-repeat; 
         }
     .auth-container {
   height: 100vh;
@@ -52,7 +52,7 @@
 }
 
 .form-group input {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -157,7 +157,9 @@ document.getElementById("auth-form").addEventListener("submit", function (e) {
     alert(` Welcome back, ${username}!`);
   } else {
     const name = document.getElementById("name").value;
+    window.location.href = "form.html";
     alert(` Account created for ${name}!`);
+    // Redirect to form.html after account creation
   }
   // Add redirect or database logic here
 });
