@@ -11,6 +11,15 @@
 </head>
 
 <body>
+  <!-- Navbar Start -->
+  <nav class="navbar">
+    <a href="home.html" class="navbar-logo">Nutriex</a>
+    <ul class="navbar-links">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="login.html" onclick="event.preventDefault(); window.location.href='login.html';">Sign Up</a></li>
+      <li><a href="form.html">My Blood Analysis</a></li>
+    </ul>
+  </nav>
   <style>
     /* Reset */
     * {
@@ -23,6 +32,84 @@
       height: 100%;
       width: 100%;
       background: #54ACBF
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      background: #fff;
+      color: #0984e3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      box-shadow: 0 2px 8px rgba(9, 132, 227, 0.08);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    .navbar-logo {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #27AE60;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .navbar-logo:hover {
+      color: #0984e3;
+    }
+
+    .navbar-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-links li {
+      display: inline;
+    }
+
+    .navbar-links a {
+      text-decoration: none;
+      color: #0984e3;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 8px 18px;
+      border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .navbar-links a:hover {
+      background: #27AE60;
+      color: #fff;
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 10px;
+      }
+
+      .navbar-logo {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+      }
+
+      .navbar-links {
+        gap: 10px;
+      }
+
+      .navbar-links a {
+        font-size: 1rem;
+        padding: 6px 10px;
+      }
     }
 
     /* Hero Section */
@@ -149,6 +236,11 @@
     .marque h1 {
       font-size: 40px;
       font-weight: 300;
+    }
+
+    /* Add padding to page content to avoid overlap */
+    .hero, .features, footer {
+      margin-top: 70px;
     }
   </style>
 

@@ -1,103 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nutriex Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <style>
-        body{
-            background-image: url("v870-mynt-20[1](1).jpg");
-            background-size: cover; 
-            background-repeat: no-repeat; 
-        }
+  <!-- Navbar Start -->
+  <nav class="navbar">
+    <a href="home.html" class="navbar-logo">Nutriex</a>
+    <ul class="navbar-links">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="login.html" onclick="event.preventDefault(); window.location.href='login.html';">Sign Up</a></li>
+      <li><a href="form.html">My Blood Analysis</a></li>
+    </ul>
+  </nav>
+  <style>
+    body {
+      background-image: url("v870-mynt-20[1](1).jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
     .auth-container {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  padding: 20px;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      padding: 20px;
 
-}
+    }
 
-.auth-box {
-  background: white;
-  padding: 40px 30px;
-  max-width: 400px;
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(210, 126, 126, 0.2);
-  animation: fadeIn 1s ease;
-  text-align: center;
-}
+    .auth-box {
+      background: white;
+      padding: 40px 30px;
+      max-width: 400px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(210, 126, 126, 0.2);
+      animation: fadeIn 1s ease;
+      text-align: center;
+    }
 
-.auth-box h2 {
-  margin-bottom: 25px;
-  color: #0984e3;
-  font-size: 1.8rem;
-}
+    .auth-box h2 {
+      margin-bottom: 25px;
+      color: #0984e3;
+      font-size: 1.8rem;
+    }
 
-.form-group {
-  text-align: left;
-  margin-bottom: 20px;
-}
+    .form-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
 
-.form-group label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
-}
+    .form-group label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
 
-.form-group input {
-  width: 95%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
+    .form-group input {
+      width: 95%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
 
-.auth-btn {
-  width: 100%;
-  padding: 12px;
-  background: #b9bdbd;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+    .auth-btn {
+      width: 100%;
+      padding: 12px;
+      background: #b9bdbd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-.auth-btn:hover {
-  background: #01a3a4;
-}
+    .auth-btn:hover {
+      background: #01a3a4;
+    }
 
-.switch-form {
-  margin-top: 15px;
-  font-size: 0.95rem;
-}
+    .switch-form {
+      margin-top: 15px;
+      font-size: 0.95rem;
+    }
 
-.switch-form span {
-  color: #00b894;
-  cursor: pointer;
-  font-weight: bold;
-  text-decoration: underline;
-}
+    .switch-form span {
+      color: #00b894;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: underline;
+    }
 
-.hidden {
-  display: none;
-}
+    .hidden {
+      display: none;
+    }
 
-/* Fade animation */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
+    /* Fade animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
 
-</style>
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      background: #fff;
+      color: #0984e3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      box-shadow: 0 2px 8px rgba(9, 132, 227, 0.08);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    .navbar-logo {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #27AE60;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .navbar-logo:hover {
+      color: #0984e3;
+    }
+
+    .navbar-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-links li {
+      display: inline;
+    }
+
+    .navbar-links a {
+      text-decoration: none;
+      color: #0984e3;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 8px 18px;
+      border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .navbar-links a:hover {
+      background: #27AE60;
+      color: #fff;
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 10px;
+      }
+
+      .navbar-logo {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+      }
+
+      .navbar-links {
+        gap: 10px;
+      }
+
+      .navbar-links a {
+        font-size: 1rem;
+        padding: 6px 10px;
+      }
+    }
+  </style>
 
   <div class="auth-container">
     <div class="auth-box">
@@ -129,42 +223,42 @@
   </div>
   <script>let isLogin = true;
 
-function toggleForm() {
-  const formTitle = document.getElementById("form-title");
-  const nameField = document.getElementById("signup-name");
-  const submitBtn = document.querySelector(".auth-btn");
-  const switchText = document.querySelector(".switch-form");
+    function toggleForm() {
+      const formTitle = document.getElementById("form-title");
+      const nameField = document.getElementById("signup-name");
+      const submitBtn = document.querySelector(".auth-btn");
+      const switchText = document.querySelector(".switch-form");
 
-  if (isLogin) {
-    formTitle.textContent = " Sign Up for Nutriex";
-    nameField.classList.remove("hidden");
-    submitBtn.textContent = " Create Account";
-    switchText.innerHTML = `Already have an account? <span onclick="toggleForm()">Login</span>`;
-    isLogin = false;
-  } else {
-    formTitle.textContent = "Login to Nutriex";
-    nameField.classList.add("hidden");
-    submitBtn.textContent = "Login";
-    switchText.innerHTML = `Don't have an account? <span onclick="toggleForm()">Sign Up</span>`;
-    isLogin = true;
-  }
-}
+      if (isLogin) {
+        formTitle.textContent = " Sign Up for Nutriex";
+        nameField.classList.remove("hidden");
+        submitBtn.textContent = " Create Account";
+        switchText.innerHTML = `Already have an account? <span onclick="toggleForm()">Login</span>`;
+        isLogin = false;
+      } else {
+        formTitle.textContent = "Login to Nutriex";
+        nameField.classList.add("hidden");
+        submitBtn.textContent = "Login";
+        switchText.innerHTML = `Don't have an account? <span onclick="toggleForm()">Sign Up</span>`;
+        isLogin = true;
+      }
+    }
 
-document.getElementById("auth-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const username = document.getElementById("username").value;
-  if (isLogin) {
-    alert(` Welcome back, ${username}!`);
-  } else {
-    const name = document.getElementById("name").value;
-    window.location.href = "form.html";
-    alert(` Account created for ${name}!`);
-    // Redirect to form.html after account creation
-  }
-  // Add redirect or database logic here
-});
-
-</script>
+    document.getElementById("auth-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      if (isLogin) {
+        alert(` Welcome back, ${username}!`);
+      } else {
+        const name = document.getElementById("name").value;
+        window.location.href = "form.html";
+        alert(` Account created for ${name}!`);
+        // Redirect to form.html after account creation
+      }
+      // Add redirect or database logic here
+    });
+  </script>
 
 </body>
+
 </html>
