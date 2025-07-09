@@ -38,12 +38,21 @@ gsap.from("h1 .b",{
     stagger:-0.15,
 })
 
+const span5 = document.querySelector("h1 span:nth-child(6)")
+gsap.to(span5,{
+    rotateX:360,
+    duration:2,
+    repeat:-1,
+    delay:2,
+})
+
 gsap.from(".hero-section, button",{
     y:50,
     opacity:0,
     duration:1,
     delay:0.5,
 })
+
 
 function arrow(){
     const plus = document.querySelector(".arrow")
@@ -81,3 +90,21 @@ function footerMarque(){
 })
 }
 footerMarque()
+
+function btnHover(){
+    const btn = document.querySelector(".hero-section, button")
+    btn.addEventListener("mouseenter",()=>{
+        gsap.to(".hero-section, button",{
+            scale:1.2,
+            duration:0.5,
+        })
+    })
+
+    btn.addEventListener("mouseleave",()=>{
+        gsap.to(".hero-section, button",{
+            scale:1,
+            duration:0.5,
+        })
+    })
+}
+btnHover()
