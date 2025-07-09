@@ -5,19 +5,31 @@ import os
 
 main = Blueprint('main', __name__)
 
-# Load your trained anemia model (update path as needed)
-MODEL_PATH = os.path.join(os.path.dirname(__file__), 'models', 'anemia_model_1.7.pkl')
-print(f"Trying to load model from: {MODEL_PATH}")  # Debug print
-
+# Load anemia model
+ANEMIA_MODEL_PATH = os.path.join(os.path.dirname(__file__), 'models', 'anemia_model_1.7.pkl')
+print(f"Trying to load anemia model from: {ANEMIA_MODEL_PATH}")
 try:
-    if not os.path.exists(MODEL_PATH):
-        print(f"Model file does not exist at: {MODEL_PATH}")  # Debug print
-        raise FileNotFoundError(f"Model file not found at {MODEL_PATH}")
-    model = joblib.load(MODEL_PATH)
-    print("Model loaded successfully!")  # Debug print
+    if not os.path.exists(ANEMIA_MODEL_PATH):
+        print(f"Model file does not exist at: {ANEMIA_MODEL_PATH}")
+        raise FileNotFoundError(f"Model file not found at {ANEMIA_MODEL_PATH}")
+    anemia_model = joblib.load(ANEMIA_MODEL_PATH)
+    print("Anemia model loaded successfully!")
 except Exception as e:
-    print(f"Model load error: {e}")
-    model = None
+    print(f"Anemia model load error: {e}")
+    anemia_model = None
+
+# Load liver model
+LIVER_MODEL_PATH = os.path.join(os.path.dirname(__file__), 'models', 'liver_model.pkl')
+print(f"Trying to load liver model from: {LIVER_MODEL_PATH}")
+try:
+    if not os.path.exists(LIVER_MODEL_PATH):
+        print(f"Model file does not exist at: {LIVER_MODEL_PATH}")
+        raise FileNotFoundError(f"Model file not found at {LIVER_MODEL_PATH}")
+    liver_model = joblib.load(LIVER_MODEL_PATH)
+    print("Liver model loaded successfully!")
+except Exception as e:
+    print(f"Liver model load error: {e}")
+    liver_model = None
 
 @main.route('/')
 def home():
@@ -34,27 +46,44 @@ def login():
 @main.route('/form.html', methods=['GET', 'POST'])
 def form():
     if request.method == 'POST':
-        if model is None:
+        if anemia_model is None:
             return "Model not found or failed to load.", 500
         try:
-            # Extract required features for anemia prediction
             age = float(request.form.get('age', 0))
             gender = request.form.get('gender', 'Male')
             hb = float(request.form.get('hb', 0))
             wbc = float(request.form.get('wbc', 0))
             platelets = float(request.form.get('platelets', 0))
-            # Add more features if your model needs them
-
-            # Example: encode gender (adjust as per your model)
             gender_val = 1 if gender.lower() == 'male' else 0
-
-            # Prepare input for model (order must match training)
             X = np.array([[age, gender_val, hb, wbc, platelets]])
-
-            pred = model.predict(X)[0]
+            pred = anemia_model.predict(X)[0]
             result = "Anemia Detected" if pred == 1 else "No Anemia Detected"
-
             return render_template('result.html', result=result)
         except Exception as ex:
             return f"Error in prediction: {ex}", 400
+    return render_template('form.html')
+
+@main.route('/liver.html', methods=['GET', 'POST'])
+def liver():
+    if request.method == 'POST':
+        if liver_model is None:
+            return "Liver model not found or failed to load.", 500
+        try:
+            # Extract only the fields needed for liver prediction
+            age = float(request.form.get('age', 0))
+            gender = request.form.get('gender', 'Male')
+            ast = float(request.form.get('ast', 0))
+            alt = float(request.form.get('alt', 0))
+            alp = float(request.form.get('alp', 0))
+            total_bilirubin = float(request.form.get('total_bilirubin', 0))
+            direct_bilirubin = float(request.form.get('direct_bilirubin', 0))
+            albumin = float(request.form.get('albumin', 0))
+            gender_val = 1 if gender.lower() == 'male' else 0
+            # Adjust the order and features as per your liver model's training
+            X = np.array([[age, gender_val, ast, alt, alp, total_bilirubin, direct_bilirubin, albumin]])
+            pred = liver_model.predict(X)[0]
+            result = "Liver Disease Detected" if pred == 1 else "No Liver Disease Detected"
+            return render_template('result.html', result=result)
+        except Exception as ex:
+            return f"Error in liver prediction: {ex}", 400
     return render_template('form.html')
