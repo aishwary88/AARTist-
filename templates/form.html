@@ -145,7 +145,7 @@
   </nav>
   <!-- Navbar End -->
   <h1> Blood Report Parameter Input</h1>
-  <form id="bloodForm">
+  <form id="bloodForm" method="POST" action="/form.html">
     <div class="form-group">
       <label class="required-field">Age</label>
       <input type="number" name="age" required />
@@ -232,46 +232,5 @@
 
     <button type="submit" >Submit</button>
   </form>
-  <script>
-    document.getElementById('bloodForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const form = e.target;
-      const formData = new FormData(form);
-
-      // Get all field names in order
-      const fields = Array.from(form.querySelectorAll('input, select')).map(el => el.name);
-
-      // Remove duplicates and empty names (for <select> with no name)
-      const uniqueFields = fields.filter((v, i, a) => v && a.indexOf(v) === i);
-
-      // Prepare CSV header and row
-      const header = uniqueFields.join(',');
-      const row = uniqueFields.map(name => {
-        let value = formData.get(name);
-        // Escape double quotes and commas
-        if (typeof value === 'string') {
-          value = value.replace(/"/g, '""');
-          if (value.includes(',') || value.includes('"')) {
-            value = `"${value}"`;
-          }
-        }
-        return value ?? '';
-      }).join(',');
-
-      const csvContent = header + '\n' + row;
-
-      // Download as CSV file
-      const blob = new Blob([csvContent], { type: 'text/csv' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'blood_report.csv';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    });
-  </script>
 </body>
 </html>
